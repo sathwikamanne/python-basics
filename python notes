@@ -1,0 +1,1117 @@
+PYTHON
+
+~STRUCTURE
+>inputs
+>algorithm
+>outputs
+
+>there are 2 types of inputs
+run time/dynamic( if the error occurs during run time it is said to be run time error)
+compile time/static( if the error occurs due to syntactical errors or spelling mistakes then it is called as compile time error)
+
+in python if input() function is used it will refer to srting it self by default
+but if we want other datatypes i can be declared as int(input())
+n=input()// n stores data in string fromat
+n==int(input())//n stores data in integer format
+
+example:
+n=input()
+ans=n+n
+print(ans)
+
+op:
+4
+44
+
+example 2:
+n=int(input())
+ans=n+n
+print(ans)
+
+o/p:
+4
+8
+
+2 main concepts
+>conditional 
+>control
+
+contionl statement
+>if condition
+>if else
+>elif(elseif in c)
+>nested if
+>switch in c, but switch can be implemented in python using dictionary(switcher.get() is the func used to get the value from switcher)
+
+control statement
+>for
+>while loop
+>no do while loop in python
+>break
+>continue
+>pass
+
+example:
+if:(exactly one condition)
+> if number is even 
+n=int(input())
+if n%2==0:(space is present but in c brackets are present[space is called as indendation] colon indicates the statement is ended)
+	print(n)(indendation is important in the next statement after if line)
+
+n=int(input())
+if n%2==0:
+	b=7
+	     print(n,b)//program doesnt execute
+
+
+if n%2==0:
+	b=7
+	print(n,b)
+
+o/p:
+4
+4 7
+
+o/p 2:
+3
+//no o/p because the if condition is not satisfied so it doesn't execute its block
+
+if-else:(exactly 2 conditions)
+n=int(input())
+if n%2==0:
+	b=7
+	print(n,b)
+else:
+	print(b)//doesn't get printed as b is defined in if block not in else block 
+
+o/p:
+name b is not defined//run time error
+
+python doesn't use braces, it uses the concept of indendation
+colon is used in conditional statements
+
+elif:(more the 2 conditions.... conditions may range from 2 to n)
+//to check whether number is even odd or zero
+n=int(input())
+if n>0:
+	print("positive")
+elif n<0:
+	print("negative")
+else:
+	print("0")
+
+
+nested if:
+//in nested  if all the given conditions must be satisfied then only it'll print something else it will get struck in between
+
+example:
+ if height<5.5
+	if weight==65
+		if gender==female
+			print("All conditions satisfied")
+
+>program to check whether the year is leap year or not
+first take a year
+check whether it is divisible by 4 or not 
+if it is not divisble by 4 it is nt leap year directly
+if it is divible by 4 then 2 conditions must be checked
+>if it is divisible by 100 or not
+if it is not divisible by 100 it is leap year
+if it is divisible by 100 then 2 more conditions must me checked
+>if it is divisible by 400 or not
+if it is divisible by 400 it is a leap year else it is not leap year
+
+CONTROL STATEMENTS
+programs done using for loop or while loop can also be done using recursion
+in order to do that we must know very well about recursion
+
+example:
+
+n=input()
+for i in range(10):
+	print(n)
+
+o/p:
+i am sorry
+
+i am sorry
+i am sorry
+i am sorry
+i am sorry
+i am sorry
+i am sorry
+i am sorry
+i am sorry
+i am sorry
+i am sorry
+
+in order to get the values of i or know how many times the loop is getting executed we can write the prgram like this
+
+n=input()
+for i in range(10):
+	print(i,n)
+
+o/p:
+i am sorry
+
+0 i am sorry
+1 i am sorry
+2 i am sorry
+3 i am sorry
+4 i am sorry
+5 i am sorry
+6 i am sorry
+7 i am sorry
+8 i am sorry
+9 i am sorry
+
+n=input()
+for i in range(1,10,2):
+	print(i,n)
+
+range is 1 to 10
+and it'll jump by 2
+so output will be 
+1 sorry
+3 sorry
+5 sorry
+7 sorry
+9 sorry
+
+n=input()
+for i in range(1,10,-2):
+	print(i,n)
+
+no o/p is generated as range is 1 to 10 but step is -2 which means move behind which can't be done
+
+n=input()
+for i in range(-10,1,-2):
+	print(i,n)
+ 
+no o/p as -10-2 is -12 which means to move behind
+it can't be done
+
+n=input()
+for i in range(10,-1,-2):
+	print(i)
+
+o/p
+8 
+6
+4
+2
+0
+
+
+#in python loops can be executed along with conditional statements which cant be done in c
+
+n=input()
+for i in range(3):
+	print(i,n)
+else:
+print("not sorry")
+
+
+n=input()
+for i in range(3):
+	print(i,n)
+	break
+else:
+print("not sorry")
+
+o/p:
+0 i am sorry
+
+since break is given else part is not executed
+
+n=input()
+for i in range(3):
+	print(i)
+	continue
+	print("hi")
+else:
+print("not sorry")
+
+o/p:
+0
+1
+2
+not sorry
+
+after continue the lines which will be written those will be skipped where as break will break the entire loop
+
+****imp****
+continue break or pass must be used only inside the loops 
+if there is conditional part along with the loop we can't use continue break or pass inside the conditional part
+
+
+if the data is same then that data will be stored in same memory location
+this concept in java is callled as string concept pool
+
+condition is the statement which returns the value only when it is true or false
+
+ex:
+if print("hello"):
+	print("hi")
+
+o/p:
+hello
+
+hello is printed because print("hello") is a command not a condition
+hence only the command gets executed and the lines after that command will not get executed as the given statement in if is not a condition rather it is a command
+
+ex2:
+if 9999:
+	print("hi")
+
+o/p:
+hi
+
+this is because whatever integers is given it'll print the output
+if zero is given the o/p will not be printed
+all the non-zero integers will return true in python where as zero returns false(the integers may be +ve or -ve except zero)
+
+while print("hi"):
+	print("hello")
+o/p:
+hi
+it is similar to that of if statement
+
+while 999:
+	print("hello")
+hello will be printed n number of times only if the number is non zero
+if the number is zero nothing will be printed
+
+dutchman guido van rossum-developed python
+
+2 more extra operators in python are
+i.membership(such as in)(checks whether the first word is in the second word)
+ii.identity (is)(checks whether both are identical)
+
+ex:
+if 'hi ' in 'hi,hello':
+	print("hi")
+else:
+	print("bye")
+print("abc")
+
+o/p:
+bye
+abc
+as 'hi '(space) is not present in 'hi,hello'
+
+ex2:
+if 1 in 123:
+	print(1)
+elif 1 in '123':
+	print(2)
+else:
+	print(3)
+
+*membership operator doesn't work on integers,it only works on strings!
+
+ex3:
+if not true is true:
+	print(true)
+elif not true is false:
+	print(false)
+else:
+	print("error")
+o/p: false
+
+ex4:
+if 3>7:
+	if -3>-6:
+		print("nested if")
+	else:
+		print("nested else")
+else:
+	print("else")
+o/p: else
+
+ex5:
+if 11>15 or 12<15:
+	if true and false:
+		if not false:
+			print(1)
+	if 101 and 543:
+		print(2)
+	else:
+		print(3)
+else:
+	print(4)
+
+ternary operator in python
+<expr> if <if_condition> else <else_condition>
+
+ex:
+age =20
+x'can vote' if age>18 else 'cannot vote'
+print(x)
+
+o/p:
+can vote
+
+ex2:
+x=y==10
+z= 1+(x if x>y else y)+2
+
+o/p:
+13
+
+#program to reverse a number
+n=int(input())
+rev=0
+while n>0:
+    rem=n%10
+    rev=rev*10+rem
+    n=n//10
+print(rev)
+
+#program to add all the digits
+n=int(input())
+rev=0
+while n>0:
+    rem=n%10
+    rev=rev+rem
+    n=n//10
+print(rev)
+
+#program for multiplication of digits
+n=int(input())
+rev=1
+while n>0:
+    rem=n%10
+    rev=rev*rem
+    n=n//10
+print(rev)
+
+#program for palindrome
+n=int(input())
+m=n
+rev=0
+while n>0:
+    rem=n%10
+    rev=rev*10+rem
+    n=n//10
+print(rev)
+if m==rev:
+    print("palindrome")
+else:
+    print("not palindrome")
+
+#program for counting number of digits
+n=int(input())
+num=0
+while n>0:
+    num=num+1
+    n=n//10
+print(num)
+
+#program for finding  number of even and odd number in list
+n=int(input())
+even=0
+odd=0
+while n>0:
+    if n%2==0:
+        even=even+1
+        n=n//10
+    else:
+        odd=odd+1
+        n=n//10
+print("no of even digits")
+print(even)
+print("no of odd digits")
+print(odd)
+
+*while loop doesn't work if it equal to zero or if it starts from zero*
+
+#program for factorial of number
+n=int(input())
+fact=1
+for i in range(1,n+1):
+    fact=fact*i
+print(fact)
+
+#program for fibonacci series
+n=int(input())
+a,b=0,1
+print(a,b,end=" ")
+for i in range(3,n+1):
+    c=a+b
+    print(c,end=" ")
+    a=b
+    b=c
+
+***end=" " is used for printing in a same line***
+
+PATTERNS:
+
+n=int(input())
+for i in range(0,n):
+    for j in range(1,n+1)
+        print(j,end=" ")
+    print()
+
+
+
+
+
+
+
+n=int(input())
+for i in range(0,n):
+    for j in range(1,n+1):
+        print(j*2-1,end=" "):
+    print()
+
+
+
+
+
+
+
+n=int(input())
+for i in range(1,n+1):
+    for j in range(i,n+i):
+        print(j,end=" ")
+    print()
+
+
+
+
+n=int(input())
+for i in range(1,n+1):
+    for j in range(i,n+i):
+        print(chr(65+j),end=" ")
+    print()
+
+
+
+
+n=int(input())
+for i in range(1,n+1):
+    for j in range(0,n):
+        print(chr(65+j),end=" ")
+    print()
+
+
+
+
+
+
+
+
+n=int(input())
+for i in range(1,n+1):
+    for j in range(i,n+i):
+        print(j,end=" ")
+    print()
+
+
+
+
+
+n=int(input())
+for i in range(1,n+1):
+    for j in range(1,n):
+        print(chr(65+j),end=" ")
+    print()
+
+
+
+n=int(input())
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(j,end=" ")
+    print()
+
+
+
+
+
+n=int(input())
+for i in range(1,n+1):
+    for j in range(i,i+i):
+        print(j,end=" ")
+    print()
+
+
+
+
+n=int(input())
+for i in range(n,0,-1):
+    for j in range(i,0,-1):
+        print(j,end=" ")
+    print()
+
+
+
+n=int(input())
+for i in range(n,0,-1):
+    for j in range(n,n-i,-1):
+        print(j,end=" ")
+    print()
+
+
+
+
+
+#square
+n=int(input())
+for i in range(0,n):
+    for j in range(1,n+1):
+        print(69,end=" ")
+    print()
+
+
+#hollow square
+n=int(input())
+for i in range(n):
+   if i==0 or i==n-1:
+       for j in range(n):
+          print("*",end=" ")
+       print()
+   else:
+       for j in range(n):
+           if j==0 or j==n-1:
+             print("*",end=" ")
+           else:
+                print(" ",end=" ")
+       print()
+
+
+#double lining hollow square
+n=int(input())
+for i in range(n):
+   if i==0 or i==1 or i==n-1 or i==n-2:
+       for j in range(n):
+          print("*",end=" ")
+       print()
+   else:
+       for j in range(n):
+           if j==0 or j==1 or j==n-1 or j==n-2:
+             print("*",end=" ")
+           else:
+                print(" ",end=" ")
+       print()
+
+
+QUICK SORT PROGRAM
+    def partition(arr,low,high):
+    pivot=arr[low]
+    start=low+1
+    end=high
+    while True:
+        while start<=end and arr[start]<=pivot:
+            start+=1
+        while start<=end and arr[end]>pivot:
+            end-=1
+        if start<end:
+            arr[start],arr[end]=arr[end],arr[start]
+        else:
+            break
+    arr[low],arr[end]=arr[end],arr[low]
+    return end
+def quicksort(arr,beg,end):
+    if beg<end:
+        p=partition(arr,beg,end)
+        quicksort(arr,beg,p-1)
+        quicksort(arr,p+1,end)
+a=[8,7,6,4,5,2,1,3]
+b=0
+e=len(a)-1
+quicksort(a,b,e)
+print(a)
+  not
+STACK:
+class stack:
+    def __init__(self):
+        self.top=-1
+        self.size=5
+        self.list=[]
+    def push(self,data):
+        if len(self.list)==5:
+            print("full")
+            return 0
+        self.top+=1
+        self.list.append(data)
+    def pop(self):
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        self.top-=1
+        self.list.pop()
+    def peek(self):
+        print(self.list)
+        if len(self.list)==0:
+            print("empty")
+            return 0
+        elif self.top>5:
+            print("out of index")
+        else:
+            print(self.list[self.top])
+s=stack()
+s.push(1)
+s.push(2)
+s.push(3)
+s.push(4)
+s.push(5)
+s.pop()
+s.peek()
+
+
+
+LINKED LIST
+  
+#insert at begining
+
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+        def __init__(self):
+                 self.head=None
+        def insertatbeg(self,value):
+            newnode=Node(value)
+            if self.head==None:
+                self.head=newnode
+            else:
+                newnode.next=self.head
+                self.head=newnode
+        def printlist(self):
+            curr=self.head
+            while (curr!=None):
+                print(curr.data,"->",end=" ")
+                curr=curr.next
+            print("null")
+l=linkedlist()
+l.insertatbeg(1)
+l.insertatbeg(2)
+l.insertatbeg(3)
+l.insertatbeg(4)
+l.printlist()
+
+
+#insert at end
+
+
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+        def __init__(self):
+                 self.head=None
+        def insertatend(self,value):
+            newnode=Node(value)
+            if self.head==None:
+                self.head=newnode
+            else:
+                curr=self.head
+                while curr.next!=None:
+                    curr=curr.next
+                curr.next=newnode    
+        def printlist(self):
+            curr=self.head
+            while (curr!=None):
+                print(curr.data,"->",end=" ")
+                curr=curr.next
+            print("null")
+l=linkedlist()
+l.insertatend(1)
+l.insertatend(2)
+l.insertatend(3)
+l.insertatend(4)
+l.printlist()
+
+
+
+#search
+
+
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+    def __init__(self):
+                 self.head=None
+    def insertatbeg(self,value):
+            newnode=Node(value)
+            if self.head==None:
+                self.head=newnode
+            else:
+                newnode.next=self.head
+                self.head=newnode
+    def insertatend(self,value):
+            newnode=Node(value)
+            if self.head==None:
+               self.head=newnode
+            else:
+                curr=self.head
+                while curr.next!=None:
+                      curr=curr.next
+                curr.next=newnode
+    def listsearch(self,key):
+            curr=self.head
+            while curr!=None:
+                if curr.data==key:
+                    print("found")
+                    break
+                curr=curr.next
+            else:
+                    print("not found")
+    
+    
+    def printlist(self):
+            curr=self.head
+            while (curr!=None):
+                print(curr.data,"->",end=" ")
+                curr=curr.next
+            print("null")
+l=linkedlist()
+l.insertatend(1)
+l.insertatend(2)
+l.insertatend(3)
+l.insertatend(4)
+l.insertatend(5)
+l.printlist()
+l.listsearch(4)
+
+
+#inseranywhere
+
+
+
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+    def __init__(self):
+                 self.head=None
+    def insertatbeg(self,value):
+            newnode=Node(value)
+            if self.head==None:
+                self.head=newnode
+            else:
+                newnode.next=self.head
+                self.head=newnode
+    def insertatend(self,value):
+            newnode=Node(value)
+            if self.head==None:
+               self.head=newnode
+            else:
+                curr=self.head
+                while curr.next!=None:
+                      curr=curr.next
+                curr.next=newnode
+   
+    def insertanywhere(self,value,key):
+            newnode=Node(value)
+            if self.head==None:
+                self.head=newnode
+            else:
+                curr=self.head
+                while curr!=None:
+                    if curr.data==key:
+                        newnode.next=curr.next
+                        curr.next=newnode
+                        break
+                    curr=curr.next
+    def listsearch(self,key):
+            curr=self.head
+            while curr!=None:
+                if curr.data==key:
+                    print("found")
+                    break
+                curr=curr.next
+            else:
+                    print("not found")                    
+    
+    def printlist(self):
+            curr=self.head
+            while (curr!=None):
+                print(curr.data,"->",end=" ")
+                curr=curr.next
+            print("null")
+l=linkedlist()
+l.insertatbeg(1)
+l.insertatbeg(2)
+l.insertatbeg(3)
+l.insertatbeg(4)
+l.insertatend(5)
+l.insertatend(6)
+l.insertanywhere(5,6)
+l.printlist()
+
+
+
+
+
+#count
+
+
+
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+    def __init__(self):
+                 self.head=None
+    def insertatbeg(self,value):
+            newnode=Node(value)
+            if self.head==None:
+                self.head=newnode
+            else:
+                newnode.next=self.head
+                self.head=newnode
+    def insertatend(self,value):
+            newnode=Node(value)
+            if self.head==None:
+               self.head=newnode
+            else:
+                curr=self.head
+                while curr.next!=None:
+                      curr=curr.next
+                curr.next=newnode
+   
+    def insertanywhere(self,value,key):
+            newnode=Node(value)
+            if self.head==None:
+                self.head=newnode
+            else:
+                curr=self.head
+                while curr!=None:
+                    if curr.data==key:
+                        newnode.next=curr.next
+                        curr.next=newnode
+                        break
+                    curr=curr.next
+    def count(self):
+        count=0
+        if self.head==None:
+            print("not found")  
+        else:
+            curr=self.head
+            while curr!=None:
+                count+=1
+                curr=curr.next
+            print(count)    
+    def listsearch(self,key):
+            curr=self.head
+            while curr!=None:
+                if curr.data==key:
+                    print("found")
+                    break
+                curr=curr.next
+            else:
+                    print("not found")                    
+    
+    def printlist(self):
+            curr=self.head
+            while (curr!=None):
+                print(curr.data,"->",end=" ")
+                curr=curr.next
+            print("null")
+l=linkedlist()
+l.insertatbeg(1)                                                            
+l.insertatbeg(2)
+l.insertatbeg(3)
+l.insertatbeg(4)
+l.insertatend(5)
+l.insertatend(6)
+l.insertanywhere(5,6)
+l.printlist()
+l.listsearch(7)
+l.count()
+
+
+# middle
+
+
+class Node:
+    def __init__(self,value):
+        self.data=value
+        self.next=None
+class linkedlist:
+    def __init__(self):
+                 self.head=None
+    def insertatbeg(self,value):
+            newnode=Node(value)
+            if self.head==None:
+                self.head=newnode
+            else:
+                newnode.next=self.head
+                self.head=newnode
+    def middle(self,value):
+            newnode=Node(value)
+            if self.head==None:
+               self.head=newnode
+            elif self.head.next==None:
+                 self.head.next=newnode
+            fast=self.head
+            slow=self.head
+            while fast.next!=None and fast.next.next!=None:
+                 fast=fast.next.next
+                 slow=slow.next
+            newnode.next=slow.next
+            slow.next=newnode            
+    def insertatend(self,value):
+            newnode=Node(value)
+            if self.head==None:
+               self.head=newnode
+            else:
+                curr=self.head
+                while curr.next!=None:
+                      curr=curr.next
+                curr.next=newnode
+   
+    def insertanywhere(self,value,key):
+            newnode=Node(value)
+            if self.head==None:
+                self.head=newnode
+            else:
+                curr=self.head
+                while curr!=None:
+                    if curr.data==key:
+                        newnode.next=curr.next
+                        curr.next=newnode
+                        break
+                    curr=curr.next
+    def insertmid(self,value):
+            newnode=Node(value)
+            count=0
+            if self.head==None:
+               self.head=newnode
+            elif self.head.next==None:
+                 self.head.next=newnode
+            else:
+                curr=self.head
+                while curr!=None:
+                     count+=1 
+                     curr=curr.next
+                curr=self.head
+                for i in range(count//2):
+                    curr=curr.next
+                newnode.next=curr.next
+                curr.next=newnode               
+    def count(self):
+        count=0
+        if self.head==None:
+            print("not found")  
+        else:
+            curr=self.head
+            while curr!=None:
+                count+=1
+                curr=curr.next
+            print(count)    
+    def listsearch(self,key):
+            curr=self.head
+            while curr!=None:
+                if curr.data==key:
+                    print("found")
+                    break
+                curr=curr.next
+            else:
+                    print("not found")                    
+    
+    def printlist(self):
+            curr=self.head
+            while (curr!=None):
+                print(curr.data,"->",end=" ")
+                curr=curr.next
+            print("null")
+l=linkedlist()
+l.insertatbeg(1)                                                            
+l.insertatbeg(2)
+l.insertatbeg(3)
+l.insertatbeg(4)
+l.insertatend(5)
+l.insertatend(6)
+l.insertanywhere(5,6)
+l.insertmid(45)
+l.middle(990)
+l.printlist()
+l.listsearch(7)
+l.count()
+
+
+TREE
+
+#normal inorder
+
+
+class node:
+    def __init__(self,data):
+        self.left=None
+        self.data=data
+        self.right=None
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.data)
+        inorder(root.right)
+r=node(1)
+r.left=node(2)
+r.right=node(3)
+r.left.left=node(4)
+r.left.right=node(5)
+inorder(r)
+
+
+#output
+4
+2
+5
+1
+3
+
+
+#BINARY SEARCH TREE
+
+#using functions
+
+class node:
+    def _init_(self,data):
+        self.left=None
+        self.data=data
+        self.right=None
+class trees:
+    def _init_(self):
+        self.root=None
+    def insert(self,value):
+        newnode=node(value)
+        if self.root is None:
+            self.root=newnode
+        else:
+            curr=self.root
+            while True:
+                if value<=curr.data:
+                    if curr.left is None:
+                        curr.left=newnode
+                        break
+                    else:
+                        curr=curr.left
+                else:
+                    if curr.right is None:
+                        curr.right=newnode
+                        break
+                    else:
+                        curr=curr.right
+    def  inorder(self):
+        self.inorderhelper(self.root)
+    def inorderhelper(self,root):
+       if root:
+        self.inorderhelper(root.left)
+        print(root.data)
+        self.inorderhelper(root.right)
+r=trees()
+r.insert(5)
+r.insert(2)
+r.insert(6)
+r.inorder()
+
